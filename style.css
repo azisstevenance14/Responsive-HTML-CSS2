@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth; 
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(92, 189, 181, 0.726);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .title{
+    text-align: center;
+    color: rgb(41, 108, 185);
+}
+
+header .title h3{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header .title p{
+    font-weight: bold;
+    font-size: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header .navbar a{
+    text-decoration: none;
+    color: black;
+    margin: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .navbar a:hover{
+    text-decoration: none;
+    color: rgb(243, 240, 243);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .fitur a{
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .fitur a:hover{
+    text-decoration: none;
+    color: rgb(41, 108, 185);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* header responsive */
+/* --- PENGATURAN RESPONSIF UNTUK LAYAR HP (Maksimal Lebar 768px) --- */
+@media (max-width: 768px) {
+    header {
+        /* Ubah arah flexbox dari menyamping (row) menjadi ke bawah (column) */
+        flex-direction: column;
+        align-items: center; /* Posisikan semua isi ke tengah */
+        gap: 15px; /* Beri jarak antar elemen */
+        padding: 20px 10px;
+    }
+
+    header .title {
+        margin-bottom: 5px; /* Jarak bawah untuk logo/title */
+        font-weight: bold;
+    }
+
+    header .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-weight: bold;
+        gap: 10px;
+    }
+
+    header .fitur {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2px;
+        gap: 10px;
+    }
+
+    /* Merapikan jarak margin tautan saat di HP */
+    header .navbar a,
+    header .fitur a {
+        margin: 0 5px;
+        font-size: 16px;
+    }
+}
+
+
+/* Styling Main */
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c0c7cf; /* Warna latar belakang lebih bersih dan modern */
+    min-height: 85vh;
+    padding: 0 50px;
+    gap: 30px;
+}
+
+/* Bagian Teks */
+main .paragraph {
+    flex: 1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #333; /* Diubah jadi gelap agar mudah dibaca */
+} 
+
+main .paragraph h4 {
+    color: rgb(41, 108, 185);
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+main .paragraph h1 {
+    font-size: 42px;
+    color: #111;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+main .paragraph p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Styling Tombol Aksi */
+main .paragraph .btn-primary {
+    display: inline-block;
+    background-color: rgb(41, 108, 185);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+main .paragraph .btn-primary:hover {
+    background-color: rgb(30, 85, 148);
+}
+
+/* Bagian Gambar */
+main .gambar {
+    flex: 1;
+    text-align: center;
+}
+
+main .gambar img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    border: 4px solid salmon;
+    border-radius: 50%;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15); 
+}
+
+/* --- RESPONSIF MAIN UNTUK HP --- */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+        height: auto;
+    }
+
+    main .paragraph {
+        margin: 0;
+    }
+
+    main .paragraph h1 {
+        font-size: 32px;
+    }
+
+    main .gambar img {
+        max-width: 250px; /* Ukuran gambar disesuaikan di HP */
+        margin-bottom: 20px;
+    }
+}
+
+/* styling hero section */
+/* --- BARIS LOGO MITRA --- */
+.partners-bar {
+    display: flex;
+    justify-content: center; /* Posisikan semua kotak di tengah horizontal */
+    align-items: center;
+    gap: 40px;               /* Jarak antar logo mitra */
+    padding: 30px;
+    background-color: #e6cccc;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+    max-width: 1000px;       /* Batas lebar agar tidak terlalu lebar di PC */
+    margin: -35px auto 40px auto; /* Margin minus di atas agar agak menempel ke main */
+    border-radius: 10px;
+}
+
+.logo-item {
+    text-align: center;
+    color: #888;             /* Warna abu-abu untuk logo */
+    font-size: 28px;
+    transition: color 0.3s ease;
+}
+
+.logo-item:hover {
+    color: rgb(41, 108, 185); /* Berubah warna saat di-hover */
+}
+
+/* --- RESPONSIF UNTUK HP --- */
+@media (max-width: 768px) {
+    .partners-bar {
+        flex-wrap: wrap;     /* Agar otomatis memisah jadi 2 baris saat di layar HP */
+        margin: 20px;
+        gap: 20px;
+        justify-content: center; /* Tetap rata tengah */
+    }
+
+    .logo-item {
+        flex: 1 1 30%;       /* Tiap item mengambil sekitar 1/3 lebar layar HP */
+    }
+}
+
+/* Styling Product */
+section h1 {
+    text-align: center;
+    color: rgb(41, 108, 185);
+    margin: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Pembungkus Utama: Menyusun sub-images dan main-image secara HORIZONTAL (Kiri-Kanan) */
+section .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Jarak antara susunan vertikal dan gambar utama */
+    max-width: 100%;
+    margin: 20px;
+    padding: 20px;
+    border: 5px solid rgb(212, 162, 127);
+    border-radius: 10px;
+}
+
+/* Susunan 2 Gambar: Diatur secara VERTIKAL (Atas-Bawah) */
+section .wrapper .sub-images {
+    display: flex;
+    flex-direction: column; /* Kunci agar 2 gambar tersusun ke bawah */
+    gap: 15px; /* Jarak antara gambar 1 dan gambar 2 */
+}
+
+/* Styling Ukuran Gambar Vertikal */
+section .wrapper .sub-images img {
+    width: 220px;
+    height: 180px;
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling Ukuran Gambar Utama */
+section .wrapper .main-image img {
+    width: 400px;
+    height: 375px; /* Tingginya disesuaikan agar pas dengan total tinggi 2 gambar + gap */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* --- RESPONSIF UNTUK HP --- */
+@media (max-width: 768px) {
+    section .wrapper {
+        flex-direction: column-reverse; /* Bertumpuk di HP */
+    }
+
+    section .wrapper .sub-images {
+        flex-direction: row; /* Di HP, 2 gambar berubah jadi horizontal agar rapi */
+    }
+
+    section .wrapper .sub-images img,
+    section .wrapper .main-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+/* --- ABOUT SECTION --- */
+.about-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    font-size: 30px;
+    color: rgb(41, 108, 185);
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- FOOTER (KONTAK & NAVIGASI) --- */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 50px 20px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h3, .footer-col h4 {
+    margin-bottom: 15px;
+    color: rgb(103, 184, 177);
+    font-size: 18px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-col p i {
+    margin-right: 8px;
+    color: rgb(41, 108, 185);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: rgb(41, 108, 185);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #777;
+}
+
+/* --- RESPONSIF UNTUK HP --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
